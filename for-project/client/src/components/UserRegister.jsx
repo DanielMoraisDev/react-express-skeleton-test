@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const UserLogin = () => {
+const UserRegister = () => {
     const [userId, setUserId] = React.useState("")
     const [password, setPassword] = React.useState("")
     const [message, setMessage] = React.useState("")
@@ -13,7 +13,7 @@ const UserLogin = () => {
             password: password
         }
 
-        fetch("/login/", {
+        fetch("/register/", {
             method: 'post',
             headers: {
                 "Content-Type": "application/json"
@@ -28,7 +28,7 @@ const UserLogin = () => {
     
     return (
         <>
-            <h1>User Login</h1>
+            <h1>User Register</h1>
             <form onSubmit={handleForm}>
                 <label>User ID</label>
                 <input type="text" name="userId" onChange={e => setUserId(e.target.value)} /><br />
@@ -41,4 +41,4 @@ const UserLogin = () => {
     )
 }
 
-export default UserLogin
+export default UserRegister
